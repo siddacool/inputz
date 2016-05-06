@@ -102,13 +102,9 @@ header {
     @include tablet {
         padding-top: 3rem;
     }
-    @include tabletLandscape {
-        text-align: justify;
-    }
     @include desktop {
         padding-top: 3rem;
         font-size: 1.5rem;
-        text-align: justify;
     }
     >.subText {
         font-size: 1rem;
@@ -218,8 +214,12 @@ footer {
 }
 
 
-section:not(:last-child){
+section{
   margin-bottom: 2.6rem;
   padding-bottom: 1.6rem;
   border-bottom: px(2) dotted lighten($fontColor,10%);
 }
+
+a.normal{
+       @include iz-btn;
+    }
