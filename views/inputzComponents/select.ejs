@@ -1,0 +1,154 @@
+
+        <section>
+
+                  <p class="heading">Select</p>
+                   <div class="componentsBox">
+                       <p>
+                           <select class="basic">
+                               <option value="Select" selected>Select</option>
+                               <option value="This">This</option>
+                               <option value="is">is</option>
+                               <option value="_InputZ">_InputZ</option>
+                               <option value="Biatch">Biatch !!</option>
+                            </select>
+
+                           <select data-izStyle="safe" class="basic">
+                               <option value="Select" selected>Select Safe</option>
+                               <option value="This">This</option>
+                               <option value="is">is</option>
+                               <option value="_InputZ">_InputZ</option>
+                               <option value="Biatch">Biatch !!</option>
+                           </select>
+
+                           <select data-izStyle="warning" class="basic">
+                               <option value="Select" selected>Select Warning</option>
+                               <option value="This">This</option>
+                               <option value="is">is</option>
+                               <option value="_InputZ">_InputZ</option>
+                               <option value="Biatch">Biatch !!</option>
+                           </select>
+
+                            <select data-izStyle="danger" class="basic">
+                               <option value="Select" selected>Select Danger</option>
+                               <option value="This">This</option>
+                               <option value="is">is</option>
+                               <option value="_InputZ">_InputZ</option>
+                               <option value="Biatch">Biatch !!</option>
+                           </select>
+
+                           <select disabled class="basic">
+                               <option value="Select" selected>Select Disabled</option>
+                               <option value="This">This</option>
+                               <option value="is">is</option>
+                               <option value="_InputZ">_InputZ</option>
+                               <option value="Biatch">Biatch !!</option>
+                           </select>
+
+                       </p>
+
+                       <p class="red">The Components Below this paragraph requires Javascript Support. please attach <strong>inputz.js</strong> to use them</p>
+
+                       <label>
+                           <select data-izObject="select">
+                               <option value="Select" selected>Select</option>
+                               <option value="This">This</option>
+                               <option value="is">is</option>
+                               <option value="InputZ">InputZ</option>
+                               <option value="Biatch">Biatch !!</option>
+                           </select>
+                       </label>
+                       <label>
+                           <select data-izObject="select" disabled>
+                               <option value="Select" selected>Select</option>
+                               <option value="This">This</option>
+                               <option value="is">is</option>
+                               <option value="InputZ">InputZ</option>
+                               <option value="Biatch">Biatch !!</option>
+                           </select>
+                       </label>
+
+
+                           <div class="codeHolder">
+                               <div class="codeButtons">
+                                   <a data-id="codeButtonHtml" class="active"><%- icons('html') %> <span>Html</span></a>
+                                   <a data-id="codeButtonCss"><%- icons('css') %> <span>Sass</span></a>
+                                   <a data-id="codeButtonJs"><%- icons('js') %> <span>Js</span></a>
+                               </div>
+                               <div class="codeWindow active" data-id="codeHtml">
+                                   <xmp>
+                                       Select
+                                       ------
+                                       <select>
+                                         <option>...</option>
+                                       </select>
+
+                                       Select Safe
+                                       -----------
+                                       <select data-izStyle="safe">
+                                         <option>...</option>
+                                       </select>
+
+                                       Select Warning
+                                       --------------
+                                       <select data-izStyle="warning">
+                                         <option>...</option>
+                                       </select>
+
+                                       Select Danger
+                                       -------------
+                                       <select data-izStyle="danger">
+                                         <option>...</option>
+                                       </select>
+
+                                       Select Disabled
+                                       ---------------
+                                       <select disabled>
+                                         <option>...</option>
+                                       </select>
+
+                                       Select Js Version
+                                       -----------------
+                                       <label>
+                                           <select>
+                                            <option>...</option>
+                                           </select>
+                                       </label>
+
+                                       Select Disable Js Version
+                                       -----------------
+                                       <label>
+                                           <select disabled>
+                                            <option>...</option>
+                                           </select>
+                                       </label>
+
+
+                                   </xmp>
+                               </div>
+                               <div class="codeWindow" data-id="codeCss">
+                                   <xmp>
+                                       Select
+                                       ----------
+                                       @include iz-selectBasic;
+
+                                       Select Js Version
+                                       -----------------
+                                       @include iz-select;
+
+                                   </xmp>
+                               </div>
+                               <div class="codeWindow" data-id="codeJs">
+                                   <xmp>
+                                      (Js Version only)
+
+                                       Select
+                                       ------
+                                       izObject.select("all");
+
+                                   </xmp>
+                               </div>
+                           </div>
+
+                   </div>
+
+        </section>

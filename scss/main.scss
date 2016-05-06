@@ -1,0 +1,225 @@
+/*-------------------- dependencies*/
+
+@import "_control";
+@import "_inputz";
+
+/*-------------------- major DOM elements*/
+
+@include resetAll;
+@include placeHolderHack;
+body {
+    min-height: 100vh;
+    width: 100%;
+    font-family: $baseFont;
+    color: $fontColor;
+    display: flex;
+    overflow-y: scroll;
+}
+#wrapper {
+    width: 100%;
+}
+.constrainBox {
+    width: 100%;
+    max-width: px(1200);
+    margin-left: auto;
+    margin-right: auto;
+    @include mainPaddingMod;
+
+    @include tabletLandscape{
+        max-width: px(450);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include desktopXL{
+        max-width: px(670);
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/*-------------------- icons default*/
+
+// size
+$iconSize: px(24);
+// color
+$iconColor: $fontColor;
+a svg,
+button svg,
+label svg {
+    pointer-events: none;
+}
+.icon {
+    fill: $iconColor;
+    width: $iconSize;
+    height: $iconSize;
+}
+
+/*----------------------------------------------------------------------*/
+
+
+/*body*/
+
+
+/*wrapper*/
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*header*/
+
+header {
+    padding-bottom: 2rem;
+    @include tablet {
+        padding-bottom: 3rem;
+    }
+    @include desktop {
+        padding-bottom: 4.5rem;
+    }
+}
+#title {
+    font-size: 2.8rem;
+    font-family: $titleFont;
+    text-align: center;
+    padding-top: 3rem;
+    @include tablet {
+        padding-top: 5rem;
+    }
+    @include desktop {
+        padding-top: 6rem;
+    }
+}
+#description {
+    padding-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1.2rem;
+    color: $fontColor;
+    @include tablet {
+        padding-top: 3rem;
+    }
+    @include tabletLandscape {
+        text-align: justify;
+    }
+    @include desktop {
+        padding-top: 3rem;
+        font-size: 1.5rem;
+        text-align: justify;
+    }
+    >.subText {
+        font-size: 1rem;
+        color: lighten($fontColor, 15%);
+        display: block;
+        padding-top: 0.8rem;
+        @include tablet {
+            padding-top: 1rem;
+        }
+        @include desktopMix {
+            text-align: left !important;
+        }
+        @include desktop {
+            padding-top: 0.8rem;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+/*main*/
+
+main {
+    flex: 1;
+    p.row {
+        display: block;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+}
+
+/*footer*/
+
+footer {
+    @include mainPadding;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.05rem;
+    @include tablet {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+    @include tabletLandscape{
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        bottom: 0;
+        width: px(280);
+        padding-right: 1rem !important;
+    }
+    @include desktop {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+    @include desktopXL{
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        bottom: 0;
+        width: px(290);
+        padding-right: 1.5rem;
+    }
+    ul {
+        display: block;
+    }
+    li {
+        display: block;
+        padding: 0.3rem 0;
+    }
+    a {
+        color: $fontColor;
+        transition: color 400ms;
+        display: inline-flex;
+        align-items: center;
+
+
+        &:hover {
+            color: lighten($fontColor, 20%);
+            .icon{
+                 fill: lighten($fontColor, 20%);
+                }
+        }
+
+        &.active {
+                cursor: default;
+                color: $fontColor;
+                &:hover {
+                    color: $fontColor;
+                    .icon{
+                       fill: $fontColor;
+                    }
+                }
+             &:after{
+                content: ':::';
+                margin-left: px(10);
+            }
+        }
+
+    }
+    .icon {
+        transition: all 400ms;
+        width: px(16);
+        height: px(16);
+        margin-right: px(7);
+        position: relative;
+        bottom: px(1);
+    }
+}
+
+
+section:not(:last-child){
+  margin-bottom: 2.6rem;
+  padding-bottom: 1.6rem;
+  border-bottom: px(2) dotted lighten($fontColor,10%);
+}

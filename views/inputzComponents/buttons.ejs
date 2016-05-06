@@ -1,0 +1,139 @@
+
+                     <section >
+                       <p class="heading" >Buttons</p>
+                             <div class="componentsBox">
+                        <p>
+                          <button id="button1" class="normal">Button</button>
+                          <button id="button2" class="normal" data-izStyle="safe">Button Safe</button>
+                          <button id="button3" class="normal" data-izStyle="warning">Button Warning</button>
+                          <button id="button4" class="normal" data-izStyle="danger">Button Danger</button>
+                          <button id="button5" class="normal"  data-izStyle="cool">Button Cool</button>
+                          <button id="button6" class="normal" disabled>Button Disabled</button>
+                       </p>
+
+                        <p><button id="button7" class="blank">Button Blank</button> </p>
+
+                        <p>
+                          <button id="buttonHollow1" class="hollow">Button Hollow</button>
+                          <button id="buttonHollow2" class="hollow" data-izStyle="safe">Button Safe</button>
+                          <button id="buttonHollow3" class="hollow" data-izStyle="warning">Button Warning</button>
+                          <button id="buttonHollow4" class="hollow" data-izStyle="danger">Button Danger</button>
+                          <button id="buttonHollow5" class="hollow" data-izStyle="cool">Button Cool</button>
+                          <button id="buttonHollow6" class="hollow" disabled>Button Disabled</button>
+
+                          </p>
+
+                        <p>
+                           <button class="round"><%- icons('folder01') %></button>
+                           <button class="round" disabled><%- icons('folderDisabled') %></button>
+                           <button class="roundHollow"><%- icons('folder01') %></button>
+                           <button class="roundHollow" disabled><%- icons('folderDisabled') %></button>
+                        </p>
+
+                         <p>
+                           <button class="pagination">1</button>
+                           <button class="pagination">2</button>
+                           <button class="pagination active">3</button>
+                           <button class="pagination">4</button>
+                           <button class="pagination">5</button>
+                           <button class="pagination">6</button>
+                        </p>
+
+                            <div class="codeHolder">
+                                <div class="codeButtons">
+                                    <a data-id="codeButtonHtml" class="active"><%- icons('html') %> <span>Html</span></a>
+                                    <a data-id="codeButtonCss"><%- icons('css') %> <span>Sass</span></a>
+                                </div>
+                                <div class="codeWindow active" data-id="codeHtml">
+                                    <xmp>
+                                        Button
+                                        ------
+                                        <button>button</button>
+
+                                        Button Safe
+                                        -----------
+                                        <button data-izStyle="safe" >Safe</button>
+
+                                        Button Warning
+                                        --------------
+                                        <button data-izStyle="warning" >Warning</button>
+
+                                        Button Danger
+                                        -------------
+                                        <button data-izStyle="danger" >Danger</button>
+
+                                        Button Cool
+                                        -----------
+                                        <button data-izStyle="cool" >Cool</button>
+
+                                        Button Disabled
+                                        ---------------
+                                        <button data-izStyle="disable" >Disabled</button>
+
+
+                                        Button Blank
+                                        ------------
+                                        <button>blank</button>
+
+
+                                        Button Round
+                                        ------------
+                                        <button>1</button>
+
+                                        Button Round Disabled
+                                        ---------------------
+                                        <button data-izStyle="disable" >1</button>
+
+
+                                        Button Round Hollow
+                                        -------------------
+                                        <button>1</button>
+
+                                        Button Round Hollow Disabled
+                                        ----------------------------
+                                        <button data-izStyle="disable" >1</button>
+
+
+                                        Button Pagination
+                                        -----------------
+                                        <button>1</button>
+
+                                        Button Pagination Active
+                                        ------------------------
+                                        <button class="active">1</button>
+
+                                    </xmp>
+                                </div>
+                                <div class="codeWindow" data-id="codeCss">
+                                    <xmp>
+                                        Button
+                                        ------
+                                        @include iz-btn;
+
+                                        Button Hollow
+                                        -------------
+                                        @include iz-btnHollow;
+
+                                        Button Blank
+                                        ------------
+                                        @include iz-btnBlank;
+
+                                        Button Round
+                                        ------------
+                                        @include iz-btnRound;
+
+                                        Button Round Hollow
+                                        -------------------
+                                        @include iz-btnRoundHollow;
+
+                                        Button Pagination
+                                        -----------------
+                                        @include iz-btnPage;
+                                    </xmp>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                     </section>

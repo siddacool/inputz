@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %> - Components</title>
+    <% include ./partials/headSection %>
+    <link rel='stylesheet' href='/css/main.css' />
+    <link rel='stylesheet' href='/css/dos.css' />
+    <% include ./partials/googleFonts %>
+</head>
+
+<body>
+   <% include ./partials/svgIcons %>
+    <div id="wrapper">
+        <header>
+            <div class="constrainBox">
+                <h1 id="title"><a href="/"><%= title %></a></h1>
+                <p id="description">
+                    list of the basic input,form elements styled with <%= title %>.
+                </p>
+            </div>
+        </header>
+        <main>
+           <div class="constrainBox">
+               <div class="componentsHolder">
+
+
+                  <% include ./inputzComponents/textfields %>
+                  <% include ./inputzComponents/buttons %>
+                  <% include ./inputzComponents/select %>
+                  <% include ./inputzComponents/checknradio %>
+                  <% include ./inputzComponents/searchnupload %>
+
+
+
+               </div>
+           </div>
+        </main>
+    </div>
+
+
+    <script type="text/javascript" src="js/script.js"></script>
+     <script type="text/javascript" src="js/componentsUi.js"></script>
+     <script type="text/javascript" src="js/inputz.js"></script>
+
+    <script>
+      izObject.checkbox();
+      izObject.radio();
+      izObject.toggle();
+      izObject.search();
+      izObject.fileUpload();
+      izObject.select();
+    </script>
+</body>
+
+</html>

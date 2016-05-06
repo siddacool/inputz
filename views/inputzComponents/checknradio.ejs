@@ -1,0 +1,188 @@
+
+                <section>
+
+                  <p class="heading">Checkbox and Radio Buttons</p>
+                   <div class="componentsBox">
+                       <p>
+                          <label data-izParent="checkbox">
+                            <input type="checkbox"> Checkbox
+                            <span></span>
+                          </label>
+
+                          <label data-izParent="checkbox">
+                            <input type="checkbox" disabled> Checkbox Disabled
+                            <span></span>
+                          </label>
+                       </p>
+
+                       <p>
+                          <label data-izParent="radio">
+                            <input type="radio" name="radio" checked> Radio 01
+                            <span></span>
+                          </label>
+                          <label data-izParent="radio">
+                            <input type="radio" name="radio"> Radio 02
+                            <span></span>
+                          </label>
+
+                          <label data-izParent="radio">
+                            <input type="radio" disabled> Radio Disabled
+                            <span></span>
+                          </label>
+                       </p>
+                       <p>
+                          <label data-izParent="toggle">
+                            <input type="checkbox">
+                            <span></span>
+                          </label>
+                           <label data-izParent="toggle">
+                            <input type="checkbox" disabled>
+                            <span></span>
+                          </label>
+                       </p>
+
+
+                   <p class="red">The Components Below this paragraph requires Javascript Support. please attach <strong>inputz.js</strong> to use them</p>
+
+
+                      <p>
+                          <label>
+                            <input type="checkbox" data-izObject="checkbox"> Checkbox
+                          </label>
+                       </p>
+
+                       <p>
+                          <label>
+                            <input type="radio" name="radio2" data-izObject="radio" checked> Radio 01
+                          </label>
+                          <label>
+                            <input type="radio" name="radio2" data-izObject="radio" > Radio 02
+                          </label>
+
+                       </p>
+
+                       <p>
+                          <label>
+                            <input type="checkbox" data-izObject="toggle" >
+                          </label>
+                       </p>
+
+
+
+
+                           <div class="codeHolder">
+                               <div class="codeButtons">
+                                   <a data-id="codeButtonHtml" class="active"><%- icons('html') %> <span>Html</span></a>
+                                   <a data-id="codeButtonCss"><%- icons('css') %> <span>Sass</span></a>
+                                   <a data-id="codeButtonJs"><%- icons('js') %> <span>Js</span></a>
+                               </div>
+                               <div class="codeWindow active" data-id="codeHtml">
+                                   <xmp>
+                                       Checkbox
+                                       --------
+                                       <label data-izParent="checkbox">
+                                         <input type="checkbox"> Checkbox
+                                         <span></span>
+                                       </label>
+
+                                       Checkbox Disabled
+                                       -----------------
+                                       <label data-izParent="checkbox">
+                                         <input type="checkbox" disabled> Checkbox
+                                         <span></span>
+                                       </label>
+
+                                       Checkbox Js Version
+                                       -------------------
+                                       <label>
+                                         <input type="checkbox"> Checkbox
+                                       </label>
+
+
+                                       Radio
+                                       -----
+                                       <label data-izParent="radio">
+                                         <input type="radio"> radio
+                                         <span></span>
+                                       </label>
+
+                                       Radio Disabled
+                                       --------------
+                                       <label data-izParent="radio">
+                                         <input type="radio" disabled> radio
+                                         <span></span>
+                                       </label>
+
+                                       Radio Js Version
+                                       ----------------
+                                       <label>
+                                         <input type="radio"> radio
+                                       </label>
+
+
+                                       Toggle
+                                       ------
+                                       <label data-izParent="toggle">
+                                         <input type="checkbox">
+                                         <span></span>
+                                       </label>
+
+                                       Toggle Disabled
+                                       ---------------
+                                       <label data-izParent="toggle">
+                                         <input type="checkbox" disabled>
+                                         <span></span>
+                                       </label>
+
+                                       Toggle Js Version
+                                       -----------------
+                                       <label>
+                                         <input type="checkbox" data-izObject="toggle">
+                                       </label>
+
+                                   </xmp>
+                               </div>
+                               <div class="codeWindow" data-id="codeCss">
+                                   <xmp>
+                                       Checkbox
+                                       --------
+                                       [data-izParent="checkbox"]{
+                                          @include iz-checkbox;
+                                       }
+
+                                       Radio
+                                       -----
+                                       [data-izParent="radio"]{
+                                          @include iz-radio;
+                                       }
+
+                                       Toggle
+                                       ------
+                                       [data-izParent="toggle"]{
+                                          @include iz-toggle;
+                                       }
+
+                                   </xmp>
+                               </div>
+                               <div class="codeWindow" data-id="codeJs">
+                                   <xmp>
+                                      (Js Version only)
+
+                                       Checkbox
+                                       --------
+                                       izObject.checkbox("all");
+
+                                       Radio
+                                       -----
+                                       izObject.radio("all");
+
+                                       Toggle
+                                       ------
+                                       izObject.toggle();
+
+                                   </xmp>
+                               </div>
+                           </div>
+
+                   </div>
+</section>

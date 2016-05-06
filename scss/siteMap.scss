@@ -1,0 +1,95 @@
+/*-------------------- dependencies*/
+
+@import "_control";
+@import "_inputz";
+
+/*----------------------------------------------------------------------*/
+
+#description{
+    text-align: center;
+}
+
+main{
+    
+    .constrainBox{
+        text-align: center;
+        
+        >ul{
+            display: inline-block;
+            @include tabletLandscape{
+            padding-left: 2.8rem;
+           }
+        
+            @include desktop{
+            padding-left: 3.8rem;
+           }
+            
+            > li{
+                &:before{
+                    @include tabletLandscape{
+                    width: 2rem;
+                   top: px(18);
+                   left: px(-38);
+                   }
+                    @include desktop{
+                      width: 3rem;
+                        top: px(19);
+                       left: px(-53);
+                     }
+                }
+            }
+        }
+    }
+    
+    
+    ul{
+        display: block;
+        border-left: px(2) dashed lighten($fontColor,40%);
+        padding-left: 1rem;
+        margin-bottom: 1rem;
+        
+        @include tabletLandscape{
+            padding-left: 1.5rem;
+        }
+        
+        @include desktop{
+            padding-left: 2rem;
+        }
+    }
+    
+    li{
+        display: block;
+        position: relative;
+        text-align: left;
+        padding: 0.3rem 0;
+        font-weight: 600;
+        letter-spacing: px(1);
+        @include tabletLandscape{
+            padding: 0.4rem 0;
+            font-size: 1.1rem;
+        }
+        @include desktop{
+            padding: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        &:before{
+            content: '';
+            width: 0.5rem;
+            border-top: px(2) dashed lighten($fontColor,40%);
+            position: absolute;
+            top: px(15);
+            left: px(-13);
+            display: block;
+            @include tabletLandscape{
+                width: 1rem;
+                top: px(18);
+                left: px(-19);
+            }
+            @include desktop{
+                width: 1.5rem;
+                top: px(19);
+                left: px(-27);
+            }
+        }
+    }
+}

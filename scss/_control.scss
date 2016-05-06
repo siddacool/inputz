@@ -1,0 +1,187 @@
+/*-------------------- dependencies*/
+
+@import "dependencies/_functions";
+@import "dependencies/_colors";
+//-------------------- global variables//
+$baseFont: 'Istok Web', sans-serif;
+$altFont: 'Josefin Slab', serif;
+$titleFont: 'Source Code Pro', Courier New;
+$baseColor: $metro-darkBlue;
+$dullColor: #f2f2f2;
+$fontColor: $ios-charcoal;
+$fontAltColor: $ios-charcoal;
+
+$dangerRed: $ios-red;
+//user defined//
+
+/*-------------------- common stuff*/
+
+@mixin mainPadding {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    
+    @include tablet{
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+    
+    @include desktop{
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+    }
+}
+
+@mixin mainPaddingMod{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    
+    @include tabletPortrait{
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+    
+    @include desktop{
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+    }
+}
+
+@mixin flexMiddle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+%flexMiddle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+%flex {
+    display: flex;
+}
+%flexInline {
+    display: inline-flex;
+}
+.dbi {
+    display: block !important;
+}
+@mixin dbi {
+    display: block !important;
+}
+
+/*-------------------- user defined stuff*/
+
+@mixin resetAll {
+    body {
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    button {
+        font-weight: normal;
+        font-style: normal;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: 0;
+        background: none;
+    }
+    a {
+        text-decoration: none;
+        margin: 0;
+        color: inherit;
+    }
+    ul,
+    ol,
+    li {
+        text-decoration: none;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: inline-block;
+    }
+    :focus {
+        outline: 0;
+    }
+}
+
+
+/*nav Redirect Text*/
+@mixin navText{
+        font-size: 1rem;
+        text-align: right;
+    
+       &.back{
+           text-align: left;
+              padding-bottom: 1.8rem;
+           a{
+               text-align: left;
+               @include desktopMixEx{
+                padding-left: 0;
+                padding-right: 2rem;
+            }
+               
+               &:after{
+                   right: initial;
+                   left: 0;
+               }
+           }
+                .icon{
+                   margin-left: 0;
+                   margin-right: 0.5rem;
+                }
+            }
+        
+        a{
+            padding-bottom: 0.4rem;
+            display: block;
+            text-align: right;
+            transition: all 400ms;
+            position: relative;
+            
+            &:after{
+                content: '';
+                position: absolute;
+                display: block;
+                bottom: 0;
+                right: 0;
+                height: px(2);
+                background-color: $baseColor;
+                width: 0;
+                transition: width 400ms;
+            }
+            
+            &:hover{
+                &:after{
+                    width: 100%;    
+                }
+            }
+            
+            @include desktopMixEx{
+                display: inline-block;
+                padding-left: 2rem;
+            }
+        }
+        
+        .icon{
+            width: 1rem;
+            height: 1rem;
+            background-color: transparent;
+            vertical-align: middle;
+            margin-bottom: 0.3rem;
+            margin-left: 0.5rem;
+            fill: lighten($fontColor,10%);
+        }
+}

@@ -1,0 +1,165 @@
+/*-------------------- dependencies*/
+
+@import "_control";
+@import "_inputz";
+
+/*----------------------------------------------------------------------*/
+
+main{
+    @include desktopMix{
+        padding-bottom: 3rem;
+    }
+}
+
+
+.componentsHolder{
+    .heading{
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: px(0.6);
+    }
+
+    .tinyText{
+       @include navText;
+    }
+
+    .red{
+        color: $dangerRed;
+        padding-bottom: 2rem;
+    }
+}
+
+.componentsBox{
+    @include placeHolderHack;
+    padding: 1.5rem 0;
+    p{
+        padding-bottom: 0.8rem;
+    }
+
+    input[type="text"],a,button,textarea,select,label{
+        letter-spacing: px(0.4);
+        margin-bottom: 1rem;
+        @include desktopMix{
+            margin-bottom: 1.2rem;
+            margin-right: 0.3rem;
+        }
+    }
+
+    input[type="text"]{
+        @include iz-textbox;
+    }
+
+    textarea{
+        @include iz-textArea;
+    }
+
+    a.normal,button.normal{
+       @include iz-btn;
+    }
+
+    a.blank,button.blank{
+        @include iz-btnBlank;
+    }
+
+    a.hollow,button.hollow{
+        @include iz-btnHollow;
+    }
+
+    a.round,button.round{
+        @include iz-btnRound;
+    }
+    a.roundHollow,button.roundHollow{
+        @include iz-btnRoundHollow;
+    }
+
+    a.pagination,button.pagination{
+        @include iz-btnPage;
+    }
+
+    select.basic{
+        @include iz-selectBasic;
+    }
+
+    label{
+        &[data-izParent="checkbox"]{
+            @include iz-checkbox;
+        }
+        &[data-izParent="radio"]{
+            @include iz-radio;
+        }
+        &[data-izParent="toggle"]{
+            @include iz-toggle;
+        }
+        &[data-izParent="select"]{
+            @include iz-select;
+        }
+        &[data-izParent="search"]{
+            @include iz-search;
+        }
+        &[data-izParent="fileUpload"]{
+            @include iz-fileUpload;
+        }
+    }
+}
+
+.codeHolder{
+    padding-top: 1rem;
+    .codeButtons{
+        padding-bottom: 0;
+        display: flex;
+        span{
+            @include desktop{
+                display: none;
+            }
+        }
+        a{
+            margin: 0;
+            position: relative;
+            display: inline-block;
+            border-radius: px(2);
+             border: px(2) solid transparent;
+            border-bottom: 0;
+            padding: 0.3rem 0.7rem;
+            top: px(2);
+            cursor: pointer;
+
+            &.active{
+                background-color: #fff;
+                border: px(2) solid lighten($fontColor,20%);
+                border-bottom: 0;
+                cursor: default;
+            }
+
+            .icon{
+                vertical-align: middle;
+                width: px(18);
+                height: px(18);
+            }
+        }
+    }
+
+    .codeWindow{
+            display: none;
+        padding: 0.75rem 0.9375rem;
+         border: px(2) solid lighten($fontColor,20%);
+        border-radius: px(2);
+        font-size: 1.1rem;
+        height: px(300);
+        overflow-y: scroll;
+        &.active{
+
+
+            display: block;
+
+        }
+
+
+        xmp{
+            margin: 0;
+            padding: 0;
+            margin-bottom: 3rem;
+            height: 100%;
+            white-space: pre-line;
+        }
+    }
+}
