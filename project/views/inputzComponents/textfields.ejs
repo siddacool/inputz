@@ -1,0 +1,59 @@
+
+<section>
+                  <p class="heading">Textfields</p>
+                   <div class="componentsBox">
+                       <p><input type="text" placeholder="Textbox"> <input type="text" data-izStyle="safe" placeholder="Textbox safe"> <input type="text" data-izStyle="warning" placeholder="Textbox Warning" id="textbox3"> <input type="text" data-izStyle="danger" placeholder="Textbox Danger" id="textbox4"> <input type="text" placeholder="Textbox Disabled" id="textbox5" disabled></p>
+
+                       <p>
+                           <textarea placeholder='Text Area'></textarea>
+                       </p>
+
+                           <div class="codeHolder">
+                               <div class="codeButtons">
+                                   <a data-id="codeButtonHtml" class="active"><%- icons('html') %> <span>Html</span></a>
+                                   <a data-id="codeButtonCss"><%- icons('css') %> <span>Sass</span></a>
+                               </div>
+                               <div class="codeWindow active" data-id="codeHtml">
+                                   <xmp>
+                                       Textbox
+                                       -------
+                                       <input type="text">
+
+                                       Textbox Safe
+                                       ------------
+                                       <input type="text" data-izStyle="safe">
+
+                                       Textbox Warning
+                                       ---------------
+                                       <input type="text" data-izStyle="warning">
+
+                                       Textbox Danger
+                                       --------------
+                                       <input type="text" data-izStyle="danger">
+
+                                       Textbox Disabled
+                                       --------------
+                                       <input type="text" disabled>
+
+
+                                       Text Area
+                                       ---------
+                                       <textarea></textarea>
+                                   </xmp>
+                               </div>
+                               <div class="codeWindow" data-id="codeCss">
+                                   <xmp>
+                                       Textbox all
+                                       -----------
+                                       @include iz-textbox;
+
+
+                                       Text Area
+                                       ---------
+                                       @include iz-textArea;
+                                   </xmp>
+                               </div>
+                           </div>
+
+                   </div>
+</section>

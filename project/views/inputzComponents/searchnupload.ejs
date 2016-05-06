@@ -1,0 +1,147 @@
+<section>
+
+                  <p class="heading">Search and Upload Fields</p>
+                   <div class="componentsBox">
+                       <p>
+                         <label data-izParent="search">
+                             <input type="search" placeholder="Search">
+                              <span></span>
+                         </label>
+                         <label data-izParent="search">
+                             <input type="search" placeholder="Search Safe" data-izStyle="safe">
+                              <span></span>
+                         </label>
+                         <label data-izParent="search">
+                             <input type="search" placeholder="Search Warning" data-izStyle="warning">
+                              <span></span>
+                         </label>
+                          <label data-izParent="search">
+                             <input type="search" placeholder="Search Danger" data-izStyle="danger">
+                              <span></span>
+                         </label>
+                         <label data-izParent="search">
+                             <input type="search" placeholder="Search Disabled" disabled>
+                              <span></span>
+                         </label>
+
+                       </p>
+                       <p>
+                           <label data-izParent="fileUpload" placeholder="Select a File to Upload">
+                             <input type="file">
+                           </label>
+                       </p>
+
+                       <p class="red">The Components Below this paragraph requires Javascript Support. please attach <strong>inputz.js</strong> to use them</p>
+
+                       <p>
+                           <label>
+                             <input type="search" placeholder="Search" data-izObject="search">
+                         </label>
+                       </p>
+
+                       <p>
+                           <label>
+                             <input type="file" data-izObject="fileUpload" placeholder="Select a File to Upload">
+                           </label>
+                       </p>
+
+
+                           <div class="codeHolder">
+                               <div class="codeButtons">
+                                   <a data-id="codeButtonHtml" class="active"><%- icons('html') %> <span>Html</span></a>
+                                   <a data-id="codeButtonCss"><%- icons('css') %> <span>Sass</span></a>
+                                   <a data-id="codeButtonJs"><%- icons('js') %> <span>Js</span></a>
+                               </div>
+                               <div class="codeWindow active" data-id="codeHtml">
+                                   <xmp>
+                                       Search
+                                       ------
+                                       <label data-izParent="search">
+                                        <input type="search">
+                                        <span></span>
+                                       </label>
+
+                                       Search Safe
+                                       -----------
+                                       <label data-izParent="search">
+                                        <input type="search" data-izStyle="safe">
+                                        <span></span>
+                                       </label>
+
+                                       Search Warning
+                                       --------------
+                                       <label data-izParent="search">
+                                        <input type="search" data-izStyle="warning">
+                                        <span></span>
+                                       </label>
+
+                                       Search Danger
+                                       -------------
+                                       <label data-izParent="search">
+                                        <input type="search" data-izStyle="danger">
+                                        <span></span>
+                                       </label>
+
+                                       Search Disabled
+                                       ---------------
+                                       <label data-izParent="search">
+                                        <input type="search" disabled>
+                                        <span></span>
+                                       </label>
+
+                                       Search Js
+                                       ------
+                                       <label>
+                                        <input type="search">
+                                       </label>
+
+
+                                       File Upload
+                                       -----------
+                                       <label data-izParent="fileUpload" placeholder="Select a File to Upload">
+                                        <input type="file">
+                                       </label>
+
+                                       File Upload Js
+                                       --------------
+                                       <label>
+                                        <input type="file" data-izOject="fileUpload" placeholder="Select a File to Upload">
+                                       </label>
+
+                                   </xmp>
+                               </div>
+                               <div class="codeWindow" data-id="codeCss">
+                                   <xmp>
+                                       Search all
+                                       ----------
+                                       [data-izParent="search"]{
+                                          @include iz-search;
+                                       }
+
+
+                                       File Upload
+                                       -----------
+                                       [data-izParent="fileUpload"]{
+                                          @include iz-fileUpload;
+                                       }
+                                   </xmp>
+                               </div>
+                               <div class="codeWindow" data-id="codeJs">
+                                   <xmp>
+                                      (Js Version only)
+
+                                       Search
+                                       ------
+                                       izObject.search("all");
+
+
+                                       File Upload
+                                       -----------
+                                       izObject.fileUpload();
+                                   </xmp>
+                               </div>
+                           </div>
+
+                   </div>
+
+        </section>
