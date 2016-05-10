@@ -574,6 +574,124 @@ $inputz-disableColor: $flat-silver;
     }
 }
 
+/* multi select */
+@mixin iz-multiSelect{
+    @include responsiveBase;
+    position: relative;
+    
+    select{
+         position: absolute;
+         visibility: hidden;
+         z-index: -20;
+         margin-top: 0;
+         margin-bottom: 0;
+        // partner div
+        & + div{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            
+            @include desktopMix{
+                width: px(250);
+            }
+            
+            // active components holder
+            >div{
+                @include textBase;
+                padding-bottom: px(5);
+                min-height: px(51);
+                padding-right: px(35);
+                position: relative;
+                
+                @include desktop{
+                    padding-right: px(32);
+                }
+                
+                &.active{
+                    i.close{
+                        display: flex;
+                    }
+                }
+            }
+            
+            // active components
+            span{
+                background-color: $baseColor;
+                color: #fff;
+                letter-spacing: px(0.4);
+                padding: 0.2rem 0.6rem;
+                margin-right: 0.5rem;
+                margin-bottom: 0.5rem;
+                border-radius: px(2);
+                display: none;
+                
+                &.active{
+                    display: inline-flex;
+                }
+            }
+            
+            // close button
+            i.close{
+                position: absolute;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                right: px(10);
+                top: px(13);
+                width: px(25);
+                height: px(25);
+                background-color: $inputz-dangerColor;
+                border-radius: 100%;
+                
+                @include desktop{
+                    width: px(22);
+                    height: px(22);
+                    top: px(16);
+                }
+                
+                &:after{
+                    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="#ffffff" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>');
+                }
+            }
+            
+            // list holder
+            ul{
+                position: absolute;
+                display: none;
+                left: 0;
+                width: 100%;
+                margin-top: 0.7rem;
+                background-color: lighten($inputz-disableColor,20%);
+                box-shadow: px(0) px(0) px(7) $inputz-disableColor;
+                z-index: 20;
+                border-radius: px(3);
+                max-height: px(200);
+                overflow-y: auto;
+                &.active{
+                    display: block;
+                }
+            }
+            
+            // list items
+            li{
+                  display: block;
+                padding: 0.4rem 0.3rem;
+                &:hover{
+                    background-color: $inputz-baseColor;
+                    color: #fff;
+                }
+                
+                &.deactive{
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    
+
+}
+
 /// -------------------- Checkbox and Radio ///
 @mixin iz-checkBase{
     @include responsiveBase;
