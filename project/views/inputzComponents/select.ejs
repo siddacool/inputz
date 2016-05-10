@@ -47,8 +47,9 @@
                        </p>
 
                        <p class="red">The Components Below this paragraph requires Javascript Support. please attach <strong>inputz.js</strong> to use them</p>
-
-                       <label>
+                       
+                       <p>
+                          <label>
                            <select data-izObject="select">
                                <option value="Select" selected>Select</option>
                                <option value="This">This</option>
@@ -65,7 +66,22 @@
                                <option value="InputZ">InputZ</option>
                                <option value="Biatch">Biatch !!</option>
                            </select>
-                       </label>
+                       </label> 
+                       </p>
+                       
+                       <p>
+                           <label>
+                           <select data-izObject="multiSelect" multiple>
+                               <option value="Select" selected>Select</option>
+                               <option value="This" selected>This</option>
+                               <option value="is" >is</option>
+                               <option value="InputZ" >InputZ</option>
+                               <option value="Biatch" >Biatch !!</option>
+                           </select>
+                        </label>
+
+                       </p>
+                       
 
 
                            <div class="codeHolder">
@@ -109,7 +125,7 @@
                                        Select Js Version
                                        -----------------
                                        <label>
-                                           <select>
+                                           <select data-izObject="select">
                                             <option>...</option>
                                            </select>
                                        </label>
@@ -117,7 +133,15 @@
                                        Select Disable Js Version
                                        -----------------
                                        <label>
-                                           <select disabled>
+                                           <select data-izObject="select" disabled>
+                                            <option>...</option>
+                                           </select>
+                                       </label>
+                                       
+                                        Multi Select
+                                       -----------------
+                                       <label>
+                                           <select data-izObject="multiSelect" multiple>
                                             <option>...</option>
                                            </select>
                                        </label>
@@ -134,6 +158,10 @@
                                        Select Js Version
                                        -----------------
                                        @include iz-select;
+                                       
+                                       Multi Select
+                                       -----------------
+                                       @include iz-multiSelect;
 
                                    </xmp>
                                </div>
@@ -144,6 +172,10 @@
                                        Select
                                        ------
                                        izObject.select("all");
+                                       
+                                       Multi Select
+                                       ------------
+                                       izObject.multiSelect();
 
                                    </xmp>
                                </div>

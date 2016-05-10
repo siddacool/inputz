@@ -18,39 +18,30 @@ izMaster.dev.date = inputzDateMod;
 izMaster.components = [];
 izMaster.components.active = [];
 
-// inputzComponents 
-//  which requires this script
-izMaster.components.push("Checkbox");
-izMaster.components.push("Select");
-izMaster.components.push("Radio");
-izMaster.components.push("Toggle");
-izMaster.components.push("Search");
-izMaster.components.push("FileUpload");
-
 // inputz Components
 //  list to string
 // and Components count
-izMaster.components.list = izMaster.components.toString();
-izMaster.components.count = izMaster.components.length;
+
 
 
 /*izObject init*/
 var izObject = {};
 
+// --- START ----
+// InputZ objects starts 
+// From the line below
+
 // Select
 // Base: Select
+izMaster.components.push("Select");
+// Object
 izObject.select = (function (opt){
     
     izMaster.components.active.push("Select");
     
     /*local declaration*/
     var izSelect = document.querySelectorAll('[data-izObject="select"]');
-    
-    /*global declaration*/
-    if(opt === "global" || "all"){
-        izSelect = document.querySelectorAll('select');
-    }
-    
+
     (function(){
         for(var i=0;i<izSelect.length;i++){
            var izSelectNow = izSelect[i],
@@ -175,8 +166,248 @@ izObject.select = (function (opt){
     
 });
 
+// Multi Select
+// Base: Select
+izMaster.components.push("Multi Select");
+// Object
+izObject.multiSelect = (function (){
+    
+    izMaster.components.active.push("Multi Select");
+    
+    /*local declaration*/
+    var izSelect = document.querySelectorAll('[data-izObject="multiSelect"]');
+
+    (function(){
+        for(var i=0;i<izSelect.length;i++){
+           var izSelectNow = izSelect[i],
+               izParent = izSelectNow.parentElement,
+               izSelectOptions = izSelectNow.querySelectorAll('option');
+            
+             /* add span */
+             if(izParent.tagName.toLowerCase() === "label"){
+                var newDiv = document.createElement('div'),
+                    newSubDiv = document.createElement('div'),
+                    newUl = document.createElement('ul'),
+                    newCloseIcon = document.createElement('i');
+                 
+                 newDiv.setAttribute('data-izPartnerOf','multiSelect');
+                 
+                 newDiv.appendChild(newSubDiv);
+                 
+                 // close icon
+                 newCloseIcon.classList.add('close');
+                 
+                 newSubDiv.appendChild(newCloseIcon);
+                 
+                 
+                 for(var j=0;j<izSelectOptions.length;j++){
+                     var izSelectOptionsNow = izSelectOptions[j],
+                         getValue = izSelectOptionsNow.value,
+                         getText = izSelectOptionsNow.textContent,
+                         newLi = document.createElement('li'),
+                         newSpan = document.createElement('span');
+                     
+                     if(izSelectOptionsNow.selected){
+                         newSpan.classList.add('active');
+                         newLi.classList.add('deactive');
+                     }
+                     else{
+                         newSpan.classList.remove('active');
+                         newLi.classList.remove('deactive');
+                     }
+                         // fill up the data
+                         newSpan.textContent = getText;
+                         newSpan.setAttribute('data-value',getValue);
+                         
+                         newSubDiv.appendChild(newSpan);
+                     
+                         newLi.textContent = getText;
+                         newLi.setAttribute('data-value',getValue);
+                         
+                         newUl.appendChild(newLi);
+                 }
+                 
+                 newDiv.appendChild(newUl);
+                 
+                 // change style
+                 (function izStyle(){
+                      if(izSelectNow.hasAttribute('data-izStyle') || izSelectNow.hasAttribute('disabled')){
+                         if(izSelectNow.hasAttribute('data-izStyle')){
+                             newSpan.setAttribute('data-izStyle',izSelectNow.getAttribute('data-izStyle'));
+                         }
+                      else{
+                          newSpan.setAttribute('data-izStyle','disable');
+                      }
+                  }
+                 })();
+                
+                
+                if(!izParent.querySelector('div')){
+                    
+                    izParent.setAttribute('data-izParent','multiSelect');
+                    izParent.appendChild(newDiv);
+                }
+                
+               
+            } 
+            
+        }
+    })();
+  
+    
+     (function dynamicSelection(){
+         
+       var izSelectDiv = document.querySelectorAll('[data-izPartnerOf="multiSelect"]');
+         
+         // self destruction function
+         function selfDestruct(self,targetElmParent){
+                var selfTopParent = self.parentNode.parentNode,
+                    selfParent = self.parentNode,
+                    targetElementParent = selfTopParent.querySelector(targetElmParent),
+                    appendElm = " ",
+                    getValue = self.getAttribute('data-value'),
+                    getText = self.textContent;
+                    
+                    // hide self and set target element value  
+                    if(targetElmParent === "ul"){
+                       self.classList.remove('active');    
+                       showElm = targetElementParent.querySelectorAll('li');
+                    }
+                    else{
+                        self.classList.add('deactive');
+                        showElm = targetElementParent.querySelectorAll('span');
+                    }
+                      
+                    // show target element
+                    for(var j=0; j<showElm.length; j++){
+                        if(showElm[j].getAttribute('data-value') === getValue){
+                            
+                            if(showElm[j].parentNode.tagName.toLowerCase() === "ul" ){
+                                showElm[j].classList.remove('deactive');
+                            }
+                            else{
+                                showElm[j].classList.add('active');
+                            }
+                        }
+                    }
+            }
+          
+          // dynamic select function
+          function selectDynamic(){
+            for(var i=0;i<izSelectDiv.length;i++){
+                var izSelectDivNow = izSelectDiv[i],
+                    spanHolder = izSelectDivNow.querySelector('div'),
+                    selectDom = spanHolder.parentNode.parentNode.parentNode.querySelector('select'),
+                    optionDom = selectDom.querySelectorAll('option'),
+                    spanDom = spanHolder.querySelectorAll('span');
+                
+                var valueArr = '';
+                
+                // deselect all
+                function deselectAll(){
+                    for(var i=0;i<optionDom.length; i++){
+                        optionDom[i].selected = false;
+                    }
+                }
+                
+                // select option
+                 function selectItems(stringFromDB) {
+                            'use strict';
+
+                        var select = selectDom,
+                            stringArray = stringFromDB.split(","),
+                            count = 0,
+                            i;
+                        
+                        // calling deselect function
+                        deselectAll();
+                     
+                        for(count = 0; count < stringArray.length; count += 1) {
+                            for(i = 0; i < select.options.length; i += 1) {
+                             if(select.options[i].value === stringArray[count]) {
+                                    select.options[i].selected = true;
+                                }
+                            }
+                        }
+                   }
+                
+                  
+                 // push values to valueArr
+                  for(var j=0;j<spanDom.length;j++){
+                      if(spanDom[j].classList.contains('active')){
+                          valueArr = valueArr + spanDom[j].getAttribute('data-value') + ",";
+                      }
+                      else{
+                          
+                      }
+                  }
+                
+                selectItems(valueArr);
+                /*selectItems('is,InputZ');*/
+            }
+         }
+         
+         
+         // List show/hide
+         (function listShowHide(){
+              for(var i=0; i<izSelectDiv.length; i++){
+                 var izUl = izSelectDiv[i].querySelector('ul'),
+                     izDiv = izSelectDiv[i].querySelector('div'),
+                     izCloseButton = izDiv.querySelector('.close');
+                  
+                  function listPop(){
+                      izUl.classList.add('active');
+                      this.classList.add('active');
+                  }
+                  
+                  izDiv.addEventListener('click',listPop);
+                  
+                  izCloseButton.addEventListener('click',function(e){
+                      e.stopPropagation();
+                      izUl.classList.remove('active');
+                      this.parentElement.classList.remove('active');
+                  })
+              }
+         })();
+         
+         // Ui 
+         (function uiDynamic(){
+              for(var i=0; i<izSelectDiv.length; i++){
+                 var izSpan = izSelectDiv[i].querySelectorAll('span'),
+                     izLi = izSelectDiv[i].querySelectorAll('li');
+            
+                 (function spanDynamic(){
+                     for(var j=0; j<izSpan.length; j++){
+                         izSpan[j].addEventListener('click',function(){
+                                selfDestruct(this,"ul");
+                                selectDynamic();
+                         })
+                     }
+                 
+                 })();
+            
+                 
+                 (function liDynamic(){
+                     for(var j=0; j<izLi.length; j++){
+                         izLi[j].addEventListener('click',function(){
+                                selfDestruct(this,"div");
+                             
+                             selectDynamic();
+                         })
+                     }
+                 
+                 })();
+           }
+         })();
+         
+    })();
+
+});
+
 // Checkbox
 // Base: Checkbox
+izMaster.components.push("Checkbox");
+// Object
 izObject.checkbox = (function (opt){
     
     izMaster.components.active.push("Checkbox");
@@ -227,6 +458,8 @@ izObject.checkbox = (function (opt){
 
 // Radio
 // Base: Radio
+izMaster.components.push("Radio");
+// Object
 izObject.radio = (function (opt){
     
     izMaster.components.active.push("Radio");
@@ -269,6 +502,8 @@ izObject.radio = (function (opt){
 
 // Toggle
 // Base: Checkbox
+izMaster.components.push("Toggle");
+// Object
 izObject.toggle = (function (opt){
     
     izMaster.components.active.push("Toggle");
@@ -306,6 +541,8 @@ izObject.toggle = (function (opt){
 
 // Search
 // Base: Search
+izMaster.components.push("Search");
+// Object
 izObject.search = (function (opt){
     
     izMaster.components.active.push("Search");
@@ -347,6 +584,8 @@ izObject.search = (function (opt){
 
 // File Upload
 // Base: File
+izMaster.components.push("File Upload");
+// Object
 izObject.fileUpload = (function (opt){
     
     izMaster.components.active.push("File Upload");
@@ -407,7 +646,14 @@ izObject.fileUpload = (function (opt){
   
 });
 
+// --- END ----
+// InputZ objects Ends Here 
+
 // List Of Active Components
 izObject.activeComponents = izMaster.components.active;
+
+// Componets tally
+izMaster.components.list = izMaster.components.toString();
+izMaster.components.count = izMaster.components.length;
 
 // Fin
