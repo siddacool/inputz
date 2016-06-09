@@ -17,11 +17,11 @@ main{
         font-weight: 600;
         letter-spacing: px(0.6);
     }
-    
+
     .tinyText{
        @include navText;
     }
-    
+
     .red{
         color: $dangerRed;
         padding-bottom: 2rem;
@@ -34,7 +34,7 @@ main{
     p{
         padding-bottom: 0.8rem;
     }
-    
+
     input[type="text"],a,button,textarea,select,label{
         letter-spacing: px(0.4);
         margin-bottom: 1rem;
@@ -43,42 +43,42 @@ main{
             margin-right: 0.3rem;
         }
     }
-    
+
     input[type="text"]{
         @include iz-textbox;
     }
-    
+
     textarea{
         @include iz-textArea;
     }
-    
+
     a.normal,button.normal{
-       @include iz-btn; 
+       @include iz-btn;
     }
-    
+
     a.blank,button.blank{
         @include iz-btnBlank;
     }
-    
+
     a.hollow,button.hollow{
         @include iz-btnHollow;
     }
-    
+
     a.round,button.round{
         @include iz-btnRound;
     }
     a.roundHollow,button.roundHollow{
         @include iz-btnRoundHollow;
     }
-    
+
     a.pagination,button.pagination{
         @include iz-btnPage;
     }
-    
+
     select.basic{
         @include iz-selectBasic;
     }
-    
+
     label{
         &[data-izParent="checkbox"]{
             @include iz-checkbox;
@@ -101,7 +101,10 @@ main{
         &[data-izParent="multiSelect"]{
             @include iz-multiSelect;
         }
-        
+        &[data-izParent="datePicker"]{
+            @include iz-datePicker;
+        }
+
     }
 }
 
@@ -125,14 +128,14 @@ main{
             padding: 0.3rem 0.7rem;
             top: px(2);
             cursor: pointer;
-            
+
             &.active{
                 background-color: #fff;
                 border: px(2) solid lighten($fontColor,20%);
                 border-bottom: 0;
                 cursor: default;
             }
-            
+
             .icon{
                 vertical-align: middle;
                 width: px(18);
@@ -140,7 +143,7 @@ main{
             }
         }
     }
-    
+
     .codeWindow{
             display: none;
         padding: 0.75rem 0.9375rem;
@@ -150,13 +153,13 @@ main{
         height: px(300);
         overflow-y: scroll;
         &.active{
-            
-            
+
+
             display: block;
-          
+
         }
-        
-        
+
+
         xmp{
             margin: 0;
             padding: 0;

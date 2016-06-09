@@ -757,12 +757,68 @@
 
         </section>
 
+                            <section>
+
+                  <p class="heading">Date Picker</p>
+                   <div class="componentsBox">
+
+                      <p class="red">The Components Below this paragraph requires Javascript Support. please attach <strong>inputz.js</strong> to use them</p>
+
+                       <p>
+                         <label>
+                             <input type="text" data-izObject="datePicker" placeholder="mm/dd/yyyy">
+                         </label>
+
+                       </p>
+
+
+
+                           <div class="codeHolder">
+                               <div class="codeButtons">
+                                   <a data-id="codeButtonHtml" class="active"><svg role="img" class="icon"><use xlink:href="#icon-html"></use></svg> <span>Html</span></a>
+                                   <a data-id="codeButtonCss"><svg role="img" class="icon"><use xlink:href="#icon-css"></use></svg> <span>Sass</span></a>
+                                   <a data-id="codeButtonJs"><svg role="img" class="icon"><use xlink:href="#icon-js"></use></svg> <span>Js</span></a>
+                               </div>
+                               <div class="codeWindow active" data-id="codeHtml">
+                                   <xmp>
+                                       Date Picker
+                                       -----------
+                                       <label>
+                                        <input type="text" data-izObject="datePicker">
+                                       </label>
+
+                                   </xmp>
+                               </div>
+                               <div class="codeWindow" data-id="codeCss">
+                                   <xmp>
+                                       Date Picker
+                                       -----------
+                                       [data-izParent="datePicker"]{
+                                          @include iz-search;
+                                       }
+
+                                   </xmp>
+                               </div>
+                               <div class="codeWindow" data-id="codeJs">
+                                   <xmp>
+                                       Date Picker
+                                       -----------
+                                       izObject.datePicker();
+
+                                   </xmp>
+                               </div>
+                           </div>
+
+
+                   </div>
+
+                  </section>
 
 
                        <p style="text-align:center"><a href="https://inputz.herokuapp.com/"class="normal">Download</a></p>
                </div>
            </div>
-          
+
         </main>
     </div>
 
@@ -779,6 +835,7 @@
       izObject.fileUpload();
       izObject.select();
       izObject.multiSelect();
+      izObject.datePicker();
     </script>
 </body>
 
