@@ -42,6 +42,16 @@ $inputz-disableColor: $flat-silver;
     }
 }
 
+//-------------------- focus outline//
+
+@mixin focusOutline{
+     &.focus {
+        outline: px(1) dotted $inputz-fontColor;
+    }
+}
+   
+
+
 //// -------------------- Base mixins ////
 
 /// -------------------- ignore clean ///
@@ -117,7 +127,7 @@ $inputz-disableColor: $flat-silver;
         
   } 
   /* Focus State */
-  &:focus,&.active{
+  &:focus,&.active,&.focus{
     border-color: lighten($inputz-baseColor,5%);  
   }  
    
@@ -511,10 +521,14 @@ $inputz-disableColor: $flat-silver;
     position: relative;
     select{
          position: absolute;
-         visibility: hidden;
+         opacity: 0;
          z-index: -20;
+         left: -999px;
          margin-top: 0;
          margin-bottom: 0;
+        
+        
+        
         
         & + div {
             position: relative;
@@ -557,6 +571,10 @@ $inputz-disableColor: $flat-silver;
                 border-radius: px(3);
                 max-height: px(200);
                 overflow-y: auto;
+                &.defocus{
+                    opacity: 0;
+                    z-index: -20;
+                }
                 &.active{
                     display: block;
                 }
@@ -565,10 +583,19 @@ $inputz-disableColor: $flat-silver;
             li{
                 display: block;
                 padding: 0.4rem 0.3rem;
+                border-width: px(1);
+                border-style: solid;
+                border-color: transparent;
                 &:hover{
                     background-color: $inputz-baseColor;
                     color: #fff;
                 }
+                
+                &.focus{
+                   border-style:dotted;
+                   border-color: $inputz-fontColor;
+                }
+                
             }
         }
     }
@@ -581,7 +608,7 @@ $inputz-disableColor: $flat-silver;
     
     select{
          position: absolute;
-         visibility: hidden;
+         opacity: 0;
          z-index: -20;
          margin-top: 0;
          margin-bottom: 0;
@@ -598,7 +625,6 @@ $inputz-disableColor: $flat-silver;
             // active components holder
             >div{
                 @include textBase;
-                padding-bottom: px(5);
                 min-height: px(51);
                 padding-right: px(35);
                 position: relative;
@@ -607,50 +633,56 @@ $inputz-disableColor: $flat-silver;
                     padding-right: px(32);
                 }
                 
-                &.active{
-                    i.close{
-                        display: flex;
-                    }
-                }
+                
             }
             
             // active components
             span{
-                background-color: $baseColor;
+                background-color: $inputz-baseColor;
                 color: #fff;
                 letter-spacing: px(0.4);
                 padding: 0.2rem 0.6rem;
                 margin-right: 0.5rem;
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.25rem;
+                margin-top: 0.25rem;
                 border-radius: px(2);
                 display: none;
                 
-                &.active{
-                    display: inline-flex;
-                }
-            }
-            
-            // close button
-            i.close{
-                position: absolute;
-                display: none;
-                justify-content: center;
-                align-items: center;
-                right: px(10);
-                top: px(13);
-                width: px(25);
-                height: px(25);
-                background-color: $inputz-dangerColor;
-                border-radius: 100%;
-                
                 @include desktop{
-                    width: px(22);
-                    height: px(22);
-                    top: px(16);
+                    font-size: 0.9rem;
+                    padding: 0.15rem 0.6rem;
+                    margin-bottom: 0.15rem;
+                    margin-top: 0.15rem;
                 }
                 
-                &:after{
-                    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="#ffffff" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>');
+                &.focus{
+                    background-color: $inputz-dangerColor;
+                    
+                    @include desktop{
+                       background-color: $inputz-baseColor; 
+                    }
+                    
+                    i.close{
+                        display: inline-block;
+                    }
+                }
+                
+                &.active{
+                  display: inline-flex;
+                }
+                
+                i.close{
+                    margin-left: 1rem;
+                    display: none;
+                    
+                    @include desktop{
+                        margin-left: 0.5rem;
+                        display: inline-block;
+                    }
+                    
+                    &:after{
+                    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="#fff" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>');
+                  } 
                 }
             }
             
@@ -674,7 +706,7 @@ $inputz-disableColor: $flat-silver;
             
             // list items
             li{
-                  display: block;
+                display: block;
                 padding: 0.4rem 0.3rem;
                 &:hover{
                     background-color: $inputz-baseColor;
@@ -682,7 +714,8 @@ $inputz-disableColor: $flat-silver;
                 }
                 
                 &.deactive{
-                    display: none;
+                    background-color: transparent;
+                    color: darken($inputz-disableColor,10%);
                 }
             }
         }
@@ -718,6 +751,7 @@ $inputz-disableColor: $flat-silver;
 // -------------------- checkbox(non Js) //
 @mixin iz-checkbox{
     @include iz-checkBase;
+    @include focusOutline;
     
     span{
         
@@ -762,7 +796,7 @@ $inputz-disableColor: $flat-silver;
 // -------------------- radio(non Js) //
 @mixin iz-radio{
     @include iz-checkBase;
-    
+    @include focusOutline;
     
     span{
         
@@ -819,6 +853,7 @@ $inputz-disableColor: $flat-silver;
 
 // -------------------- toggle(non Js) //
 @mixin iz-toggle{
+    @include focusOutline;
     display: flex;
     position: relative;
     cursor: pointer;
@@ -954,7 +989,8 @@ $inputz-disableColor: $flat-silver;
     border-radius: px(2);
     cursor: pointer;
     
-    &:hover{
+    &:hover,
+    &.focus{
         border-color: lighten($inputz-baseColor,5%);
     }
     
@@ -983,3 +1019,231 @@ $inputz-disableColor: $flat-silver;
     }
 }
 
+
+/// -------------------- datePicker ///
+@mixin iz-datePicker{
+    position: relative;
+    
+    @include responsiveBaseFlex;
+    
+    >span{
+        @include responsiveBase;
+         @include textBase;
+         order: 1;
+        border-right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        position: relative;
+        width: 2rem;
+        
+        &:before{
+             content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"><path d="M20 19h-4v-4h4v4zm-6-10h-4v4h4v-4zm6 0h-4v4h4v-4zm-12 6h-4v4h4v-4zm16-14v22h-24v-22h24zm-2 6h-20v14h20v-14zm-8 8h-4v4h4v-4zm-6-6h-4v4h4v-4z"/></svg>');
+            position: absolute;
+        }
+    }
+    
+    input[type="text"]{
+        @include responsiveBase;
+        @include textBase;
+        order: 2;
+        border-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding-left: 0.7rem;
+        flex: 1;
+        margin: 0;
+        
+        &:focus + span {
+            border-color: $inputz-baseColor;
+        }
+        
+        &[data-izStyle="safe"]{
+            & + span {
+             border-color: $inputz-safeColor;
+           }
+        }
+        
+        &[data-izStyle="warning"]{
+            & + span {
+             border-color: $inputz-warningColor;
+           }
+        }
+        &[data-izStyle="danger"]{
+            & + span {
+             border-color: $inputz-dangerColor;
+           }
+        }
+        &[disabled]{
+            & + span {
+             border-color: $inputz-disableColor;
+           }
+        }
+        
+    }
+    
+    [data-izPartnerOf="datePicker"]{
+        position: absolute;
+        top: 3rem;
+        margin-top: 0.7rem;
+        display: none;
+        background-color: lighten($inputz-disableColor,20%);
+        box-shadow: px(0) px(0) px(7) $inputz-disableColor;
+        z-index: 20;
+        border-radius: px(3);
+        height: 14.1875rem;
+        
+        @include desktop{
+            
+        }
+        
+        
+        &.show{
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: flex-start;
+        }
+        
+        p,a{
+            padding: 0;
+            margin: 0;
+        }
+        
+        .dateYear,
+        .dateMonth{
+            padding: 0.4rem 0.3rem;
+        }
+        
+        .dateYear{
+            order: 2;
+        }
+        
+        .dateMonth{
+            order: 1;
+            display: inline-flex;
+            
+            a{
+                order: 2;
+                margin: 0 0.3rem;
+            }
+            
+            span{
+                   display: none;
+                   content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path d="M6 0l12 12-12 12z"/></svg>');  
+                
+                @include desktop{
+                    display: inline-block;
+                }
+            }
+            
+            [data-id="prevArrow"]{
+                order: 1;
+                transform: rotate(180deg);
+            }
+            
+            [data-id="nextArrow"]{
+                order: 3;
+            }
+        }
+        
+        table{
+            order: 3;
+            table-layout: fixed;
+            border-collapse: collapse;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        
+        th,td{
+           text-align: center;
+            
+        }
+        
+        td{
+            
+             &.today{
+                a{
+                    background-color: $inputz-baseColor;
+                    color: #fff;
+                    
+                    &:hover{
+                        background-color: darken($inputz-baseColor,3%);
+                    }
+                }
+            }
+            
+            
+            a{
+                 display: inline-block;
+                transition: background-color 400ms;
+                 width: 25px;
+                 height: 23px;
+                
+                &:hover{
+                    background-color: lighten($inputz-disableColor,10%);
+                }
+                
+                &.selected{
+                    font-weight: 600;
+                }
+                
+                &:empty{
+                    &:hover{
+                         background-color: initial;
+                    }
+                   
+                }
+            }
+            
+           
+        }
+    }
+    
+     [data-id="backArrow"]{
+        content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>'); 
+        transform: rotate(180deg);
+    }
+    
+    [data-id="monthModal"],
+    [data-id="yearModal"],
+    [data-id="decadeModal"],
+    [data-id="centuryModal"]{
+        position: absolute;
+        display: none;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        background-color: lighten($inputz-disableColor,20%);
+        align-content: flex-start;
+        
+        &.active{
+            display: flex;
+        }
+        
+        table{
+            width: 100%;
+        }
+        
+        td{
+            padding: 0.3rem 0;
+            
+            a{
+                display: block;
+                width: initial;
+                height: initial;
+           }
+        }
+        
+        span{
+            padding: 0.4rem 0.3rem;
+        }
+        
+    }
+    
+    
+    
+    
+   
+}
