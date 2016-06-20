@@ -769,6 +769,10 @@
                              <input type="text" data-izObject="datePicker" placeholder="mm/dd/yyyy">
                          </label>
 
+                         <label>
+                             <input type="text" data-izObject="datePicker" data-izFormat="mmm_dd,yyyy" placeholder="mmm_dd,yyyy">
+                         </label>
+
                        </p>
 
 
@@ -780,14 +784,47 @@
                                    <a data-id="codeButtonJs"><svg role="img" class="icon"><use xlink:href="#icon-js"></use></svg> <span>Js</span></a>
                                </div>
                                <div class="codeWindow active" data-id="codeHtml">
-                                   <xmp>
-                                       Date Picker
-                                       -----------
-                                       <label>
-                                        <input type="text" data-izObject="datePicker">
-                                       </label>
+                                 <xmp>
+                                      Date Picker
+                                      -----------
+                                      <label>
+                                       <input type="text" data-izObject="datePicker">
+                                      </label>
 
-                                   </xmp>
+                                      Date Picker Local Date Formats
+                                      ------------------------------
+
+                                      dd/mm/yyyy (e.g. 31/12/2015)
+                                      ----------------------------
+                                      <label>
+                                       <input type="text" data-izObject="datePicker" data-izFormat='dd/mm/yyyy'>
+                                      </label>
+
+                                      mm-dd-yyyy (e.g. 12-31-2015)
+                                      ----------------------------
+                                      <label>
+                                       <input type="text" data-izObject="datePicker" data-izFormat='mm-dd-yyyy'>
+                                      </label>
+
+                                      dd-mm-yyyy (e.g. 31-12-2015)
+                                      ----------------------------
+                                      <label>
+                                       <input type="text" data-izObject="datePicker" data-izFormat='mm-dd-yyyy'>
+                                      </label>
+
+                                      mmm_dd,yyyy (e.g. Dec 31,2015)
+                                      ------------------------------
+                                      <label>
+                                       <input type="text" data-izObject="datePicker" data-izFormat='mmm_dd,yyyy'>
+                                      </label>
+
+                                      dd_mmm_yyyy (e.g. 31 Dec 2015)
+                                      ------------------------------
+                                      <label>
+                                       <input type="text" data-izObject="datePicker" data-izFormat='dd_mmm_yyyy'>
+                                      </label>
+
+                                  </xmp>
                                </div>
                                <div class="codeWindow" data-id="codeCss">
                                    <xmp>
@@ -800,12 +837,35 @@
                                    </xmp>
                                </div>
                                <div class="codeWindow" data-id="codeJs">
-                                   <xmp>
-                                       Date Picker
-                                       -----------
-                                       izObject.datePicker();
+                                 <xmp>
+                                        Date Picker
+                                        -----------
+                                        izObject.datePicker();
 
-                                   </xmp>
+                                        Date Picker Global Date Formats
+                                        -------------------------------
+
+                                        dd/mm/yyyy (e.g. 31/12/2015)
+                                        ----------------------------
+                                        izObject.datePicker('dd/mm/yyyy');
+
+                                        mm-dd-yyyy (e.g. 12-31-2015)
+                                        ----------------------------
+                                        izObject.datePicker('mm-dd-yyyy');
+
+                                        dd-mm-yyyy (e.g. 31-12-2015)
+                                        ----------------------------
+                                        izObject.datePicker('dd-mm-yyyy');
+
+                                        mmm_dd,yyyy (e.g. Dec 31,2015)
+                                        ------------------------------
+                                        izObject.datePicker('mmm_dd,yyyy');
+
+                                        dd_mmm_yyyy (e.g. 31 Dec 2015)
+                                        ------------------------------
+                                        izObject.datePicker('dd_mmm_yyyy');
+
+                                    </xmp>
                                </div>
                            </div>
 
@@ -813,6 +873,69 @@
                    </div>
 
                   </section>
+
+                  
+<section>
+                  <p class="heading">Progress Bar</p>
+                   <div class="componentsBox">
+                     <p>
+                         <span data-izObject="progressBar" data-value="50"></span>
+                         <span data-izObject="progressBar" data-value="15" data-izStyle="safe"></span>
+                         <span data-izObject="progressBar" data-value="85" data-izStyle="warning"></span>
+                         <span data-izObject="progressBar" data-value="25" data-izStyle="danger"></span>
+                         <span data-izObject="progressBar" data-value="35" disabled></span>
+                       </p>
+
+                       <p>
+                         <span data-izObject="progressBar" data-value="15" data-izSize="small"></span>
+                         <span data-izObject="progressBar" data-value="85" data-izSize="small"></span>
+                         <span data-izObject="progressBar" data-value="25" data-izSize="small"></span>
+                       </p>
+                           <div class="codeHolder">
+                               <div class="codeButtons">
+                                   <a data-id="codeButtonHtml" class="active"><svg role="img" class="icon"><use xlink:href="#icon-html"></use></svg> <span>Html</span></a>
+                                   <a data-id="codeButtonCss"><svg role="img" class="icon"><use xlink:href="#icon-css"></use></svg> <span>Sass</span></a>
+                               </div>
+                               <div class="codeWindow active" data-id="codeHtml">
+                                 <xmp>
+                                     Progress Bar
+                                     ("data-value" 0 to 100 in increments of 5)
+                                     ------------------------------------------
+                                     <span data-izObject="progressBar" data-value="10"></span>
+
+                                     Progress Bar Safe
+                                     -----------------
+                                     <span data-izObject="progressBar" data-value="15" data-izStyle="safe"></span>
+
+                                     Progress Bar Warning
+                                     --------------------
+                                     <span data-izObject="progressBar" data-value="15" data-izStyle="warning"></span>
+
+                                     Progress Bar Danger
+                                     -------------------
+                                     <span data-izObject="progressBar" data-value="15" data-izStyle="danger"></span>
+
+                                     Progress Bar Disable
+                                     ---------------------
+                                     <span data-izObject="progressBar" data-value="15" disabled></span>
+
+
+                                     Progress Bar Small
+                                     ------------------
+                                     <span data-izObject="progressBar" data-value="10" data-izSize="small"></span>
+                                 </xmp>
+                               </div>
+                               <div class="codeWindow" data-id="codeCss">
+                                 <xmp>
+                                      Progress Bar all
+                                      ----------------
+                                      @include iz-progressBar;
+                                  </xmp>
+                               </div>
+                           </div>
+
+                   </div>
+</section>
 
 
                        <p style="text-align:center"><a href="https://inputz.herokuapp.com/"class="normal">Download</a></p>

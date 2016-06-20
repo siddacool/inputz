@@ -6,9 +6,8 @@
 /*----------------------------------------------------------------------*/
 
 main{
-    @include desktopMix{
+
         padding-bottom: 3rem;
-    }
 }
 
 .componentsHolder{
@@ -35,7 +34,7 @@ main{
         padding-bottom: 0.8rem;
     }
 
-    input[type="text"],a,button,textarea,select,label{
+    input[type="text"],a,button,textarea,select,label,[data-izObject="progressBar"]{
         letter-spacing: px(0.4);
         margin-bottom: 1rem;
         @include desktopMix{
@@ -105,6 +104,10 @@ main{
             @include iz-datePicker;
         }
 
+    }
+
+    [data-izObject="progressBar"]{
+            @include iz-progressBar;
     }
 }
 

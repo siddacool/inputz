@@ -1,0 +1,62 @@
+
+<section>
+                  <p class="heading">Progress Bar</p>
+                   <div class="componentsBox">
+                     <p>
+                         <span data-izObject="progressBar" data-value="50"></span>
+                         <span data-izObject="progressBar" data-value="15" data-izStyle="safe"></span>
+                         <span data-izObject="progressBar" data-value="85" data-izStyle="warning"></span>
+                         <span data-izObject="progressBar" data-value="25" data-izStyle="danger"></span>
+                         <span data-izObject="progressBar" data-value="35" disabled></span>
+                       </p>
+
+                       <p>
+                         <span data-izObject="progressBar" data-value="15" data-izSize="small"></span>
+                         <span data-izObject="progressBar" data-value="85" data-izSize="small"></span>
+                         <span data-izObject="progressBar" data-value="25" data-izSize="small"></span>
+                       </p>
+                           <div class="codeHolder">
+                               <div class="codeButtons">
+                                   <a data-id="codeButtonHtml" class="active"><%- icons('html') %> <span>Html</span></a>
+                                   <a data-id="codeButtonCss"><%- icons('css') %> <span>Sass</span></a>
+                               </div>
+                               <div class="codeWindow active" data-id="codeHtml">
+                                 <xmp>
+                                     Progress Bar
+                                     ("data-value" 0 to 100 in increments of 5)
+                                     ------------------------------------------
+                                     <span data-izObject="progressBar" data-value="10"></span>
+
+                                     Progress Bar Safe
+                                     -----------------
+                                     <span data-izObject="progressBar" data-value="15" data-izStyle="safe"></span>
+
+                                     Progress Bar Warning
+                                     --------------------
+                                     <span data-izObject="progressBar" data-value="15" data-izStyle="warning"></span>
+
+                                     Progress Bar Danger
+                                     -------------------
+                                     <span data-izObject="progressBar" data-value="15" data-izStyle="danger"></span>
+
+                                     Progress Bar Disable
+                                     ---------------------
+                                     <span data-izObject="progressBar" data-value="15" disabled></span>
+
+
+                                     Progress Bar Small
+                                     ------------------
+                                     <span data-izObject="progressBar" data-value="10" data-izSize="small"></span>
+                                 </xmp>
+                               </div>
+                               <div class="codeWindow" data-id="codeCss">
+                                 <xmp>
+                                      Progress Bar all
+                                      ----------------
+                                      @include iz-progressBar;
+                                  </xmp>
+                               </div>
+                           </div>
+
+                   </div>
+</section>
