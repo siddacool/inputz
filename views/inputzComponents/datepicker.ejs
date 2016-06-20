@@ -10,6 +10,10 @@
                              <input type="text" data-izObject="datePicker" placeholder="mm/dd/yyyy">
                          </label>
 
+                         <label>
+                             <input type="text" data-izObject="datePicker" data-izFormat="mmm_dd,yyyy" placeholder="mmm_dd,yyyy">
+                         </label>
+
                        </p>
 
 
@@ -21,14 +25,47 @@
                                    <a data-id="codeButtonJs"><%- icons('js') %> <span>Js</span></a>
                                </div>
                                <div class="codeWindow active" data-id="codeHtml">
-                                   <xmp>
-                                       Date Picker
-                                       -----------
-                                       <label>
-                                        <input type="text" data-izObject="datePicker">
-                                       </label>
+                                 <xmp>
+                                      Date Picker
+                                      -----------
+                                      <label>
+                                       <input type="text" data-izObject="datePicker">
+                                      </label>
 
-                                   </xmp>
+                                      Date Picker Local Date Formats
+                                      ------------------------------
+
+                                      dd/mm/yyyy (e.g. 31/12/2015)
+                                      ----------------------------
+                                      <label>
+                                       <input type="text" data-izObject="datePicker" data-izFormat='dd/mm/yyyy'>
+                                      </label>
+
+                                      mm-dd-yyyy (e.g. 12-31-2015)
+                                      ----------------------------
+                                      <label>
+                                       <input type="text" data-izObject="datePicker" data-izFormat='mm-dd-yyyy'>
+                                      </label>
+
+                                      dd-mm-yyyy (e.g. 31-12-2015)
+                                      ----------------------------
+                                      <label>
+                                       <input type="text" data-izObject="datePicker" data-izFormat='mm-dd-yyyy'>
+                                      </label>
+
+                                      mmm_dd,yyyy (e.g. Dec 31,2015)
+                                      ------------------------------
+                                      <label>
+                                       <input type="text" data-izObject="datePicker" data-izFormat='mmm_dd,yyyy'>
+                                      </label>
+
+                                      dd_mmm_yyyy (e.g. 31 Dec 2015)
+                                      ------------------------------
+                                      <label>
+                                       <input type="text" data-izObject="datePicker" data-izFormat='dd_mmm_yyyy'>
+                                      </label>
+
+                                  </xmp>
                                </div>
                                <div class="codeWindow" data-id="codeCss">
                                    <xmp>
@@ -41,12 +78,35 @@
                                    </xmp>
                                </div>
                                <div class="codeWindow" data-id="codeJs">
-                                   <xmp>
-                                       Date Picker
-                                       -----------
-                                       izObject.datePicker();
+                                 <xmp>
+                                        Date Picker
+                                        -----------
+                                        izObject.datePicker();
 
-                                   </xmp>
+                                        Date Picker Global Date Formats
+                                        -------------------------------
+
+                                        dd/mm/yyyy (e.g. 31/12/2015)
+                                        ----------------------------
+                                        izObject.datePicker('dd/mm/yyyy');
+
+                                        mm-dd-yyyy (e.g. 12-31-2015)
+                                        ----------------------------
+                                        izObject.datePicker('mm-dd-yyyy');
+
+                                        dd-mm-yyyy (e.g. 31-12-2015)
+                                        ----------------------------
+                                        izObject.datePicker('dd-mm-yyyy');
+
+                                        mmm_dd,yyyy (e.g. Dec 31,2015)
+                                        ------------------------------
+                                        izObject.datePicker('mmm_dd,yyyy');
+
+                                        dd_mmm_yyyy (e.g. 31 Dec 2015)
+                                        ------------------------------
+                                        izObject.datePicker('dd_mmm_yyyy');
+
+                                    </xmp>
                                </div>
                            </div>
 

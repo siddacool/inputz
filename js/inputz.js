@@ -817,7 +817,7 @@ izObject.fileUpload = (function (opt){
 // Base: Text
 izMaster.components.push("Date Picker");
 // Object
-izObject.datePicker = (function (){
+izObject.datePicker = (function (dateType){
     izMaster.components.active.push("Date Picker");
     
     /*Global attributes*/
@@ -833,6 +833,16 @@ izObject.datePicker = (function (){
             izAltDate.setDate(1);
             return izAltDate.getDay();
         })();
+    
+    /*date type variation*/
+    var izDateFormat,
+        dateFormats = ['default','dd/mm/yyyy','mm-dd-yyyy','dd-mm-yyyy','mmm_dd,yyyy','dd_mmm_yyyy'];
+    if(! dateType){
+        izDateFormat = 'default';
+    }
+    else{
+       izDateFormat =  dateType;
+    }
     
     // century master    
     var centuryMaster = {};
@@ -1728,7 +1738,8 @@ izObject.datePicker = (function (){
         
     }
     
-    // to Two Digit Number
+    // Push deatils Back
+    // one to two digit converter
     function twoDigit(n) {
        return (n < 10) ? ("0" + n) : n;
     };
@@ -1745,8 +1756,7 @@ izObject.datePicker = (function (){
                 izAnchor[i].classList.remove('selected');
             }
         }
-        
-        
+                
         for(i=0;i<izAnchor.length;i++){
             izAnchor[i].addEventListener('click',function(){
                 var targetDiv = this.parentElement.parentElement.parentElement.parentElement,
@@ -1755,13 +1765,56 @@ izObject.datePicker = (function (){
                     self = this,
                     dayText = twoDigit( (function(){ return self.textContent })() ),
                     monthValue = twoDigit( (function(){ return targetDiv.querySelector('.dateMonth').querySelector('a').getAttribute('data-value')})() ),
+                    monthText = targetDiv.querySelector('.dateMonth').querySelector('a').textContent,
                     yearText = targetDiv.querySelector('.dateYear').querySelector('a').textContent;
                     
+                    // date format check
+                    function dateFormatCheck(dateFormatVal){
+                        switch (dateFormatVal){
+                            case dateFormats[0]:
+                              // mm/dd/yyyy
+                              return monthValue + '/' + dayText + '/' + yearText;
+                              break;
+                            case dateFormats[1]:
+                              // dd/mm/yyyy
+                              return dayText + '/' + monthValue + '/' + yearText;
+                              break;
+                            case dateFormats[2]:
+                              // mm-dd-yyyy
+                              return monthValue + '-' + dayText + '-' + yearText;
+                              break;
+                            case dateFormats[3]:
+                              // dd-mm-yyyy
+                              return dayText + '-' + monthValue + '-' + yearText;
+                              break;
+                            case dateFormats[4]:
+                              // mmm_dd,yyyy
+                              return monthText + ' ' + dayText + ',' + yearText;
+                              break;
+                             case dateFormats[5]:
+                              // dd_mmm_yyyy
+                              return dayText + ' ' + monthText + ' ' + yearText;
+                              break;
+                            default:
+                              // mm/dd/yyyy
+                              return monthValue + '/' + dayText + '/' + yearText;
+                        }
+                    }
                     
                     if(this.textContent !== ""){
                         clearFocus();
                         
-                        target.value = monthValue + '/' + dayText + '/' + yearText;
+                        if(target.hasAttribute('data-izFormat')){
+                            var targetFormat = target.getAttribute('data-izFormat');
+                            
+                            target.value = dateFormatCheck(targetFormat);
+                        }
+                        else{
+                           target.value = dateFormatCheck(izDateFormat); 
+                        }
+                        
+                        // set value for text box object
+                        target.setAttribute('data-value',monthValue + '/' + dayText + '/' + yearText);
                         
                         self.classList.add('selected');
                     }
@@ -1796,10 +1849,6 @@ izObject.datePicker = (function (){
         });
         
     }
-    
-   
-    
-      
 
     
 });
