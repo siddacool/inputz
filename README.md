@@ -67,7 +67,7 @@ gulp.task('watch', function () {
 gulp.task('default', ['scssToCss','jsComp' , 'watch']);
 
 ```
-### Adding an _InputZ object
+## Adding an _InputZ object
 **scss dependencies**
 ```
 /*-------------------- dependencies*/
