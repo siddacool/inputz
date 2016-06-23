@@ -1,4 +1,4 @@
-# _InputZ deatils <img src="https://camo.githubusercontent.com/f669f28f8d26852d22562fc7e43a4842b3fc875f/687474703a2f2f7369646461636f6f6c2e6769746875622e696f2f696e7075747a2d64657461696c732f696e7075747a5f69636f6e2e7376672532303d333178" alt="Logo" data-canonical-src="http://siddacool.github.io/inputz-details/inputz_icon.svg%20=31x" style="max-width:100%;width:31px;height:31px">
+# _InputZ deatils <img src="https://camo.githubusercontent.com/3c88562af7d79c2c19301214526bbc0dff292d4f/687474703a2f2f7369646461636f6f6c2e6769746875622e696f2f696e7075747a2d64657461696c732f696e7075747a5f69636f6e2e737667" alt="Logo" data-canonical-src="http://siddacool.github.io/inputz-details/inputz_icon.svg" style="max-width:100%;">
 
 a Sass (.scss) based css framework for input,form elements embressing the new web concepts. 
 
