@@ -2,9 +2,11 @@
 
 a Sass (.scss) based css framework for input,form elements embressing the new web concepts. 
 
-<p align="center">
-  <img src="http://siddacool.github.io/inputz-details/img/inputz_icon_nameLogo_inverted.png" height="251">
-</p>
+<img src="http://siddacool.github.io/inputz-details/img/inputz_icon_nameLogo_inverted.png" height="251">
+
+
+
+
 
 ## Getting Started
 
