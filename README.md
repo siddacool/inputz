@@ -1,4 +1,6 @@
-![Main Logo](http://siddacool.github.io/inputz-details/img/inputz_icon_nameLogo.png)
+<p align="center">
+  <img src="http://siddacool.github.io/inputz-details/img/inputz_icon_nameLogo.png" height="300">
+</p>
 # _InputZ deatils
 
 a Sass (.scss) based css framework for input,form elements embressing the new web concepts. 
