@@ -1,4 +1,4 @@
-# _InputZ deatils <img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="24">
+# _InputZ deatils <img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31">
 
 a Sass (.scss) based css framework for input,form elements embressing the new web concepts. 
 
