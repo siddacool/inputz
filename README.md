@@ -81,6 +81,7 @@ scss dependencies
 @include placeHolderHack;
 
 ```
+---
 
 Example A Textbox
 
@@ -95,6 +96,7 @@ input[type="text"]{
 }
 
 ```
+---
 Example 02 Select (js version)
 
 example_B.html
