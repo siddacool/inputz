@@ -122,4 +122,4 @@ izObject.select();
 
 For detailed description please check [_inputz Components](https://inputz.herokuapp.com/components) and/or [_inputz on Github Pages](http://siddacool.github.io/inputz-details/)
 
-<img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31"><img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31"><img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31"><img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31">
+<img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31"> <img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31"> <img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31"> <img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31">
