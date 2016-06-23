@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="http://siddacool.github.io/inputz-details/img/inputz_icon_nameLogo.png" height="300">
+  <img src="http://siddacool.github.io/inputz-details/img/inputz_icon_nameLogo_inverted.png" height="257">
 </p>
 # _InputZ deatils
 
