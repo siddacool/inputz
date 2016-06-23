@@ -67,13 +67,8 @@ gulp.task('watch', function () {
 gulp.task('default', ['scssToCss','jsComp' , 'watch']);
 
 ```
-### Adding an Input object
-Example 01 Textbox
-example01.html
-```
-<input type="text">
-```
-example01.scss
+### Adding an _InputZ object
+scss dependencies
 ```
 /*-------------------- dependencies*/
 
@@ -85,9 +80,40 @@ example01.scss
 @include resetAll;
 @include placeHolderHack;
 
-/*-------------------- Example*/
+```
+
+Example A Textbox
+
+example_A.html
+```
+<input type="text">
+```
+example_A.scss
+```
 input[type="text"]{
     @include iz-textbox;
 }
 
+```
+Example 02 Select (js version)
+
+example_B.html
+```
+<label>
+   <select data-izObject="select">
+        <option>...</option>
+    </select>
+</label>
+```
+example_B.scss
+```
+[data-izObject="select"]{
+   @include iz-select;
+}
+```
+example_B.js
+
+call this function within your html after attaching inputz.js
+```
+izObject.select();
 ```
