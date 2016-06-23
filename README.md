@@ -4,8 +4,8 @@ a Sass (.scss) based css framework for input,form elements embressing the new we
 
 ## Getting Started
 
-* visit https://inputz.herokuapp.com/download to customize and download the required files. 
-* use your prefered method for handing .scss and compressing .js files . we use gulp
+* visit [_InputZ Downloads](https://inputz.herokuapp.com/download) to customize and download the required files. 
+* use your prefered method for handing .scss and compressing .js files . we use [gulp](http://gulpjs.com/)
 
 ### Prerequisities
 
