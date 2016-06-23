@@ -67,3 +67,27 @@ gulp.task('watch', function () {
 gulp.task('default', ['scssToCss','jsComp' , 'watch']);
 
 ```
+### Adding an Input object
+Example 01 Textbox
+example01.html
+```
+<input type="text">
+```
+example01.scss
+```
+/*-------------------- dependencies*/
+
+@import "_control";
+@import "_inputz";
+
+/*-------------------- Reset and Hacks*/
+
+@include resetAll;
+@include placeHolderHack;
+
+/*-------------------- Example*/
+input[type="text"]{
+    @include iz-textbox;
+}
+
+```
