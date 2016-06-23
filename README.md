@@ -1,4 +1,4 @@
-# _InputZ deatils
+# _InputZ deatils ![Logo](http://siddacool.github.io/inputz-details/img/inputz_icon.png)
 
 a Sass (.scss) based css framework for input,form elements embressing the new web concepts. 
 
