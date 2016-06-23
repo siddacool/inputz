@@ -12,6 +12,12 @@ a Sass (.scss) based css framework for input,form elements embressing the new we
 copy and attach the downloaded files to your project
 
 ###Gulp workflow (optional)
+project dependencies installation
+```
+npm i --save-dev gulp gulp-sass gulp-uglify gulp-autoprefixer gulp-combine-mq
+```
+
+gulp.js
 ```
 var gulp = require('gulp'),
     
