@@ -1,4 +1,4 @@
-# _InputZ deatils <img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31">
+# _InputZ deatils
 
 a Sass (.scss) based css framework for input,form elements embressing the new web concepts. 
 
@@ -121,3 +121,5 @@ izObject.select();
 ```
 
 For detailed description please check [_inputz Components](https://inputz.herokuapp.com/components) and/or [_inputz on Github Pages](http://siddacool.github.io/inputz-details/)
+
+<img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31"><img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31"><img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31"><img src="http://siddacool.github.io/inputz-details/inputz_icon.svg" height="31">
