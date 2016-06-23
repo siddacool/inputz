@@ -1,4 +1,4 @@
-![Main Logo](http://siddacool.github.io/inputz-details/img/inputz_icon_nameLogo_inverted.png)
+![Main Logo](http://siddacool.github.io/inputz-details/img/inputz_icon_nameLogo.png)
 # _InputZ deatils
 
 a Sass (.scss) based css framework for input,form elements embressing the new web concepts. 
