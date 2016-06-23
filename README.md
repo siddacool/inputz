@@ -68,7 +68,7 @@ gulp.task('default', ['scssToCss','jsComp' , 'watch']);
 
 ```
 ### Adding an _InputZ object
-** scss dependencies **
+**scss dependencies**
 ```
 /*-------------------- dependencies*/
 
@@ -83,7 +83,7 @@ gulp.task('default', ['scssToCss','jsComp' , 'watch']);
 ```
 ---
 
-** Example A Textbox **
+**Example A Textbox**
 
 example_A.html
 ```
@@ -97,7 +97,7 @@ input[type="text"]{
 
 ```
 ---
-** Example B Select (js version) **
+**Example B Select (js version)**
 
 example_B.html
 ```
