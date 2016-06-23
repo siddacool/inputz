@@ -1,4 +1,4 @@
-# _InputZ deatils
+# _InputZ
 
 a Sass (.scss) based css framework for input,form elements embressing the new web concepts. 
 
