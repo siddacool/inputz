@@ -120,6 +120,4 @@ call this function within your html after attaching inputz.js
 izObject.select();
 ```
 
-**For More Detailed Description of Objects Please Check**
-* [_inputz Components](https://inputz.herokuapp.com/components)
-* [_inputz on Github Pages](http://siddacool.github.io/inputz-details/)
+For detailed description please check [_inputz Components](https://inputz.herokuapp.com/components) and/or [_inputz on Github Pages](http://siddacool.github.io/inputz-details/)
