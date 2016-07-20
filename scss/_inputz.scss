@@ -1,7 +1,8 @@
+//UPDATE : July 20 2016.
+//BETA
+
 /*-------------------- dependencies*/
-
 @import "_control";
-
 
 //-------------------- global variables//
 $inputz-baseColor: $baseColor;
@@ -18,7 +19,6 @@ $inputz-disableColor: $flat-silver;
 //user defined//
 
 //-------------------- place holder hack//
-
 @mixin placeHolderHack {
     
     $inputz-placeHolder: $fontColor;
@@ -43,13 +43,11 @@ $inputz-disableColor: $flat-silver;
 }
 
 //-------------------- focus outline//
-
 @mixin focusOutline{
      &.focus {
         outline: px(1) dotted $inputz-fontColor;
     }
 }
-   
 
 
 //// -------------------- Base mixins ////
@@ -102,8 +100,7 @@ $inputz-disableColor: $flat-silver;
    }
 }
 
-
-//// -------------------- Inputz Objects ////
+/// -------------------- Major Base ///
 @mixin majorBase{
   color: $inputz-fontColor;
   font-size: $inputz-fontSize;
@@ -151,24 +148,6 @@ $inputz-disableColor: $flat-silver;
     
 }
 
-// -------------------- Textbox //
-
-/* Normal Textbox */
-@mixin iz-textbox{
-    @include responsiveBase;
-    @include textBase;
-}
-
-// -------------------- Textarea //
-/* Normal Textarea */
-@mixin iz-textArea{
-    @include responsiveBase;
-    @include textBase;
-    font-size: calc(#{$inputz-fontSize} + 0.05rem );
-    font-family: inherit;
-    min-height: px(100);
-}
-
 /// -------------------- Button Objects ///
 /* Button Base rectangular */
 @mixin buttonBaseRect{
@@ -208,6 +187,51 @@ $inputz-disableColor: $flat-silver;
     }
         
 }
+
+/// -------------------- Checkbox and Radio ///
+@mixin iz-checkBase{
+    @include responsiveBase;
+    position: relative;
+    cursor: pointer;
+    transition: color 400ms;
+    
+     @include desktopMix{
+        margin-right: 1rem;   
+    }
+
+    input[type="checkbox"],
+    input[type="radio"]{
+        opacity: 0;
+        cursor: pointer;
+    }
+    
+    span{
+        position: absolute;
+        left: 0;
+        border-style: solid;
+    }
+}
+
+//// -------------------- Inputz Objects ////
+
+// -------------------- Textbox //
+
+/* Normal Textbox */
+@mixin iz-textbox{
+    @include responsiveBase;
+    @include textBase;
+}
+
+// -------------------- Textarea //
+/* Normal Textarea */
+@mixin iz-textArea{
+    @include responsiveBase;
+    @include textBase;
+    font-size: calc(#{$inputz-fontSize} + 0.05rem );
+    font-family: inherit;
+    min-height: px(100);
+}
+
 // -------------------- Rectangular Button //
 /* Normal Rectangular solid Button */
 @mixin iz-btn{
@@ -436,7 +460,6 @@ $inputz-disableColor: $flat-silver;
         }
 }
 
-
 /* Hollow Round Button */
 @mixin iz-btnRoundHollow{
     @include buttonBaseRound;
@@ -509,7 +532,6 @@ $inputz-disableColor: $flat-silver;
 }
 
 /// -------------------- Select ///
-// -------------------- Select(non Js) //
 /* Normal select */
 @mixin iz-selectBasic{
     @include responsiveBase;
@@ -725,30 +747,7 @@ $inputz-disableColor: $flat-silver;
 
 }
 
-/// -------------------- Checkbox and Radio ///
-@mixin iz-checkBase{
-    @include responsiveBase;
-    position: relative;
-    cursor: pointer;
-    transition: color 400ms;
-    
-     @include desktopMix{
-        margin-right: 1rem;   
-    }
-
-    input[type="checkbox"],
-    input[type="radio"]{
-        opacity: 0;
-        cursor: pointer;
-    }
-    
-    span{
-        position: absolute;
-        left: 0;
-        border-style: solid;
-    }
-}
-// -------------------- checkbox(non Js) //
+// -------------------- checkbox //
 @mixin iz-checkbox{
     @include iz-checkBase;
     @include focusOutline;
@@ -793,7 +792,8 @@ $inputz-disableColor: $flat-silver;
         }
     }
 }
-// -------------------- radio(non Js) //
+
+// -------------------- radio //
 @mixin iz-radio{
     @include iz-checkBase;
     @include focusOutline;
@@ -851,7 +851,7 @@ $inputz-disableColor: $flat-silver;
     }
 }
 
-// -------------------- toggle(non Js) //
+// -------------------- toggle //
 @mixin iz-toggle{
     @include focusOutline;
     display: flex;
@@ -913,7 +913,6 @@ $inputz-disableColor: $flat-silver;
 }
 
 /// -------------------- Search ///
-// -------------------- Search(non Js) //
 @mixin iz-search{
     
     @include responsiveBaseFlex;
@@ -975,7 +974,6 @@ $inputz-disableColor: $flat-silver;
 }
 
 /// -------------------- File Upload ///
-// -------------------- File Upload(non Js) //
 @mixin iz-fileUpload{
     @include responsiveBaseFlex;
     position: relative;
@@ -1018,7 +1016,6 @@ $inputz-disableColor: $flat-silver;
         display: flex;
     }
 }
-
 
 /// -------------------- datePicker ///
 @mixin iz-datePicker{
@@ -1243,7 +1240,6 @@ $inputz-disableColor: $flat-silver;
     }
    
 }
-
 
 /// -------------------- Progress Bar ///
 @mixin iz-progressBar{

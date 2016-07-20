@@ -2,7 +2,7 @@
 var inputzVersion = 0.1,
     // 1 or 0
     inputzIsBeta = 1,
-    inputzDateMod = "Apr 29 2016";
+    inputzDateMod = "July 20 2016";
 // intro
 var izMaster = {};
 izMaster.ver = inputzVersion;
@@ -594,7 +594,6 @@ izObject.checkbox = (function (opt){
     
 });
 
-
 // Radio
 // Base: Radio
 izMaster.components.push("Radio");
@@ -642,7 +641,6 @@ izObject.radio = (function (opt){
     
 });
 
-
 // Toggle
 // Base: Checkbox
 izMaster.components.push("Toggle");
@@ -684,7 +682,6 @@ izObject.toggle = (function (opt){
     focusOutline('[data-izObject="toggle"]');
     
 });
-
 
 // Search
 // Base: Search
